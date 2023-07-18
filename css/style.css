@@ -1,0 +1,255 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: rgb(84, 173, 232);
+}
+
+nav {
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.bloque1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.padreGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: "logo logo logo"
+        "onePiece onePiece nami"
+        "vol1 sanji sanji"
+        "vol2 oneGroup vol103";
+    width: 90vw;
+    margin: auto;
+    margin-top: 5rem;
+    border: 1px solid black;
+
+}
+
+.hijo2,
+.hijo3,
+.hijo4,
+.hijo5,
+.hijo6,
+.hijo7,
+.hijo8 {
+    border: 2px solid black;
+}
+
+.padreGrid h3 {
+    font-size: 1.25rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.hijo1 {
+    grid-area: logo;
+    margin: auto;
+
+}
+
+.hijo2 {
+    grid-area: onePiece;
+    display: flex;
+
+}
+
+.hijo2 h3,
+.hijo5 h3,
+.hijo8 h3 {
+    margin: auto;
+}
+
+.hijo3 {
+    grid-area: nami;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px solid black;
+}
+
+.hijo4 {
+    grid-area: vol1;
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+.hijo4 h3 {
+    width: 29%;
+    margin: auto;
+    text-align: center;
+}
+
+.hijo5 {
+    grid-area: sanji;
+    display: flex;
+}
+
+.hijo6 {
+    grid-area: vol2;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.hijo6 img {
+    order: 2;
+}
+
+.hijo6 h3 {
+    order: 1
+}
+
+.hijo7 {
+    grid-area: oneGroup;
+    display: flex;
+}
+
+.hijo8 {
+
+    grid-area: vol103;
+    display: flex;
+    justify-content: space-around;
+}
+
+.hijo9 {
+    display: none;
+}
+
+footer {
+    height: 5vh;
+    text-align: center;
+}
+
+/* media queries
+establecemos las reglas para los diferentes breakpoint o tamaños de dispositivos
+ solo colocamos el codigo que cambia del codigo general */
+
+/* breakpoint o punto de quiebre o valor maximo para desktop */
+@media screen and (max-width: 1200px) {
+    header {
+        background-color: rgb(14, 142, 226);
+    }
+
+    ul li a {
+        color: rgb(21, 5, 109);
+    }
+
+}
+
+/* breakpoint o punto de quiebre o valor maximo para tablet */
+@media screen and (max-width: 768px) {
+    header {
+        background-color: rgb(7, 52, 81);
+    }
+
+    ul li a {
+        color: wheat;
+    }
+
+    .padreGrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto;
+        grid-template-areas: "logo logo  "
+                            "onePiece   nami"
+                             "vol1 vol2"
+                            "oneGroup oneGroup"
+        ;
+         
+
+    }
+
+    .hijo5, .hijo8 {
+        display: none;
+    }
+
+    .hijo2,
+    .hijo3,
+    .hijo5,
+    .hijo7 {
+        flex-direction: column;
+    }
+}
+
+/* breakpoint o punto de quiebre o valor maximo para celulares */
+@media screen and (max-width: 576px) {
+    header {
+        background-color: rgb(31, 1, 97);
+    }
+
+    ul li a {
+        text-decoration: none;
+        color: white;
+    }
+
+    nav {
+        height: 10vh;
+    }
+
+    nav ul li {
+        display: block;
+        margin-left: 0;
+        line-height: 1.25;
+    }
+
+    .padreGrid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 130px 300px 350px 350px 260px;
+        grid-template-areas: "logo"
+                                "onePiece" 
+                                "extra"
+                                " sanji"
+                                " oneGroup" 
+                                "vol103";
+
+
+    }
+
+
+    .hijo4,
+    .hijo3,
+    .hijo6,
+    .hijo8 {
+        display: none;
+    }
+
+    .hijo5{
+        display: flex;
+    }
+    .hijo9 {
+        display: flex;
+        grid-area: extra;
+
+    }
+}
+
+/* queda el codigo general para mas de 1200px es decir pantallas grandes */
